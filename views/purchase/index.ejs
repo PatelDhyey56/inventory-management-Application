@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Purchase Order</title>
+  <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+  <script src="/js/bootstrap.js"></script>
+  <link rel="stylesheet" href="src/css/allpage.css" />
+  <link rel="stylesheet" href="src/css/purchase/styles.css">
+</head>
+
+<body>
+  <%- include('../components/navigation.ejs', {data}) %>
+    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModal" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title" id="deleteModal">Delete Product</h1>
+            <button type="button" class="btn-close" onclick="modelHide()" data-bs-dismiss="modal" aria-label="Close">
+            </button>
+          </div>
+          <div class="modal-body">
+            Are you sure you want to delete this product ?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" onclick="modelHide()" data-bs-dismiss="modal">No</button>
+            <button type="button" id="confirm" class="btn btn-danger">Yes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="div-second pt-3">
+      <div class="outer-div">
+        <%- include('../components/messagePopUp')%>
+          <h3 class="mt-2">Purchase Order</h3>
+          <% if(!data?.storageId) { %>
+            <input type="hidden" id="admin" />
+            <% } %>
+              <div class="mt-5" id="root"></div>
+              <%- include('../components/pagginationComponent')%>
+      </div>
+    </div>
+</body>
+<script src="js/commonFunction/commonFunction.js"></script>
+<script src="/js/purchase/pagination.js"></script>
+<script src="/js/purchase/validations.js"></script>
+<script src="/js/purchase/generators.js"></script>
+<script src="/js/components/messagePopUp.js"></script>
+<script src="/js/purchase/index.js"></script>
+
+</html>

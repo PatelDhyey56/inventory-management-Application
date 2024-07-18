@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile View</title>
+  <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+  <script src="/js/bootstrap.js"></script>
+  <link rel="stylesheet" href="src/css/allpage.css" />
+  <link rel="stylesheet" href="src/css/profile/profileStyle.css" />
+</head>
+
+<body>
+  <%- include("../components/navigation", {data})%>
+    <div class="div-second">
+      <div class="main-container">
+        <div class="profile-details">
+          <% if(profileDetails[0][0].role !=4) { %>
+            <div><span>Name : <%= profileDetails[0][0].firstname%></span><br />
+              <% } else {%>
+
+                <div><span>Name : <%= profileDetails[0][0].firstname + " " + profileDetails[0][0].lastname%>
+                  </span><br />
+                  <% } %>
+                </div>
+                <div><span>Date of Birth : <%= profileDetails[0][0].dob %></span><br /></div>
+                <div>
+                  <div><span>Role : <%= profileDetails[0][0].role %></span></div><br />
+                </div>
+                <div>
+                  <span>Email : <%= profileDetails[0][0].email %></span>
+                </div>
+                <div class="edit-btn-container">
+                  <button class="edit-profile-btn" onclick="location.href='/profileEdit'">Edit Profile</button>
+                </div>
+            </div>
+            <div class="img-container view-img">
+              <img src="<%= data?.dp ? `/uploads/${data.dp}` : '/icons/profile.png'%>" alt="img" width="40" height="40"
+                class="rounded-circle" />
+            </div>
+        </div>
+      </div>
+    </div>
+</body>
+
+</html>

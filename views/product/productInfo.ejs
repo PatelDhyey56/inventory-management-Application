@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product</title>
+  <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+  <script src="/js/bootstrap.js"></script>
+  <link rel="stylesheet" href="src/css/allpage.css" />
+</head>
+
+<body onload="loadData()">
+  <%- include("../components/navigation", {data})%>
+    <div class="div-second">
+      <div class="container p-3">
+        <%- include('../components/messagePopUp')%>
+          <div class="row ">
+            <div class="col p-5">
+              <h3>Product</h3>
+              <form id="productForm1" class="mt-5">
+                <label for="productname">Product Name</label>
+                <input type="text" class="form-control" name="productname" id="productname">
+                <span id="errorproductname">
+                </span><br>
+                <label for="skuid">Sku Id</label>
+                <input type="text" class="form-control" name="skuid" id="skuid">
+                <span id="errorskuid">
+                </span><br>
+                <label for="category">Product category</label>
+                <select class="form-select" name="category" id="category">
+                  <option value="1">hii</option>
+                </select>
+                <span id="errorcategory">
+                </span><br>
+                <label for="cost">Product Cost</label>
+                <input type="number" class="form-control" name="cost" id="cost" min="1">
+                <span id="errorcost">
+                </span><br>
+                <label for="description">Product Description</label>
+                <input type="text" class="form-control" name="description" id="description">
+                <span id="errordescription">
+                </span><br>
+                <input type="button" value="Update" class="btn btn-dark" id="submit" onclick="submitData()">
+              </form>
+            </div>
+            <div class="col d-flex align-items-center p-5">
+              <img src="icons/pro1.png" alt="img" width="350" height="350">
+            </div>
+          </div>
+      </div>
+    </div>
+    <script src="js/commonFunction/commonFunction.js"></script>
+    <script src="/js/products/productInfo.js"></script>
+    <script src="/js/components/messagePopUp.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+.pagginationsection {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.pagginationcontainer {
+  position: relative;
+}
+
+form {
+  min-height: 280px;
+}
+
+input[type="search"] {
+  padding: 5px;
+  /* border-radius: 50px;
+  outline: none; */
+}
+
+th,
+td {
+  text-align: center;
+}
+
+.pagenumber p {
+  font-size: unset !important;
+}
+
+.outer-div {
+  padding-left: 20px;
+}
+
+.modal-content__pdf {
+  width: 800px;
+  margin: 0 auto;
+  position: absolute;
+  /* right: 2%; */
+  /* transform: translate(10%, 10%); */
+}
+/* .pdfModal {
+  height: 100dvh !important;
+  overflow-y: scroll;
+} */

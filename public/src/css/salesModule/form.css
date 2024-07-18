@@ -1,0 +1,44 @@
+.container {
+	width: 95%;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	padding-top: 64px;
+}
+
+#insertFormDiv {
+	width: 100%;
+	padding: 2rem 0;
+}
+#insertForm {
+	width: 100%;
+}
+#productFormDiv {
+	display: none;
+}
+
+.productTableDiv{
+	height: 50dvh;
+	overflow: scroll;
+	margin-top: 5%;
+}
+#productFooter {
+  text-align: center;
+  margin: 3rem auto;
+}
+#productListHead{
+	position: sticky;
+	top: 0;
+}
+.editQuantity{
+	width: 5rem;
+}
+.formHeader{
+	display: flex;
+}
+.historyBtn{
+	margin-left: auto;
+}
+.productFormTable{
+	width: 100%;
+}

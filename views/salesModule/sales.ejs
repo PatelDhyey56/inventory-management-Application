@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="src/css/dashboard/dashboard.css" />
+  <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+  <script src="/js/bootstrap.js"></script>
+  <link rel="stylesheet" href="src/css/salesModule/sales.css" />
+  <link rel="stylesheet" href="src/css/allpage.css" />
+
+</head>
+
+<body>
+  <%- include('../components/navigation', {data})%>
+    <%- include('./deletePopup')%>
+      <%- include('pdfPopUp')%>
+        <div class="container div-second">
+          <div class="gridComponent" id="gridComponent">
+            <div class="Header">
+              <div class="title">
+                <img src="icons/sales.png" alt="img" width="50" height="50" style="margin-top: -61px; " />
+                <h2>Sales History</h2><br>
+              </div>
+              <div class="allfilters">
+                <input type="text" placeholder="Search Here" id="searchbar" onkeyup="searchFilter()"
+                  class="form-control">
+                <a class="btn btn-outline-dark filter" href="/salesNewOrder">New +</a>
+                <%if(data.roleId==4){%>
+                  <div class="form-floating ">
+                    <select name="storage" class="form-select" onchange="fetching()" aria-label="select"
+                      id="storageCombo"></select>
+                    <label for="storage">Storage</label>
+                  </div>
+                  <%}%>
+                    <div class="form-floating fill2">
+                      <select name="payment_status" class="form-select" aria-label="select" id="payment"
+                        onchange="paymentFilter()"></select>
+                      <label for="floatingPaymentStatus">Payment</label>
+                    </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid">
+            <p id="error"></p>
+            <table class="table table-hover">
+              <thead class="table-light" id="thead"></thead>
+              <tbody id="tbody"></tbody>
+            </table>
+          </div>
+        <section id="paggination">
+          <%- include('../components/pagginationComponent')%>
+        </section>
+        </div>
+
+</body>
+<script src="/socket.io/socket.io.js"></script>
+<script src="js/commonFunction/commonFunction.js"></script>
+<script src="js/salesModule/grid/fetchGrid.js"></script>
+<script src="js/salesModule/updateGrid.js"></script>
+
+</html>

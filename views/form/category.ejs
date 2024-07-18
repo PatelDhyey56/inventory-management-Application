@@ -1,0 +1,37 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product</title>
+  <link rel="stylesheet" href="src/css/form.css">
+  <link rel="stylesheet" href="src/css/manageCustomers/customerForm.css" />
+  <style>
+  </style>
+</head>
+
+<body class="body">
+  <div class="row form-popup" id="myForm1">
+    <div class="col-md-12 " data-bs-spy="scroll" style="width: 498px;">
+      <form id="categoryForm" name="categoryForm">
+        <div class="container">
+          <h1>Add Category</h1>
+          <h3 onclick="closeFormCategory()" id="closeCustomerForm" class="text-danger">X</h3>
+          <fieldset>
+            <div class="form-floating mb-3 customerform__errordiv">
+              <input name="categoryname" type="text" class="form-control customerInput" id="floatingInput"
+                placeholder="name@example.com">
+              <label for="floatingInput">Category Name </label>
+            </div>
+          </fieldset>
+          <div id="error"></div>
+          <button type="button" id="submitBtn" class="btn btn-outline-primary" onclick="submitbtn1()">Save</button>
+          <button type="reset" class="btn btn-outline-danger">Reset</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+
+</html>

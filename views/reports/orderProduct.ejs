@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Products</title>
+  <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+  <script src="/js/bootstrap.js"></script>
+  <link rel="stylesheet" href="src/css/allpage.css" />
+</head>
+
+<body onload="fetchData()">
+  <%- include("../components/navigation", {data})%>
+    <div class="div-second py-3">
+      <section class="d-flex justify-content-center py-3">
+        <div class="card mx-5 mb-2 p-3" style="width: 67rem">
+          <div>
+            <span class="fs-2" style="color: #002F4B;">Order Products</span>
+            <span class=" float-end">
+              <a href="/SalesorderDashbord" class="btn btn-outline-dark">Back</a>
+            </span>
+          </div>
+          <div>
+            <table class="table table-hover">
+              <thead>
+                <tr id="productHeader"></tr>
+              </thead>
+              <tbody id="productData"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script src="/js/reports/orderProduct.js"></script>
+</body>
+
+</html>

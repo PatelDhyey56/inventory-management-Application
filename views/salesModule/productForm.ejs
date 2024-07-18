@@ -1,0 +1,52 @@
+<form name="productForm" id="productForm" onsubmit="return false">
+  <table class="productFormTable">
+    <tr>
+      <td>
+        <input type="text" name="orderid" id="productOrderId" hidden />
+      </td>
+      <td>
+        <div class="form-floating fill2">
+          <select name="category" id="productCategory" tabindex="1" onchange="getProducts()"
+            class="productField category me-5 form-select dropdown-toggle">
+            <option value="" selected hidden>Select Category</option>
+          </select>
+          <label>Category</label>
+        </div>
+      </td>
+      <td>
+        <div class="form-floating fill2">
+          <select name="product" id="product" tabindex="2"
+            class="productField product me-5 form-select dropdown-toggle">
+            <option value="" selected hidden>Select category first</option>
+          </select>
+          <label>Product</label>
+        </div>
+      </td>
+      <td>
+        <div class="form-floating fill2">
+          <select name="ordertype" tabindex="3" class=" form-select dropdown-toggle orderType"  id="orderType">
+          </select>
+          <label>Order Type</label>
+        </div>
+      </td>
+      <td>
+        <input type="number" name="quantity" tabindex="4" id="quantity" placeholder="Quantity....."
+          class="productField me-5 form-control" min="1" />
+      </td>
+      <td>
+        <input type="submit" tabindex="5" value="ADD" class="productField me-5 btn btn-outline-success"
+          onclick="addProduct()" />
+      </td>
+    </tr>
+  </table>
+</form>
+<div class="productTableDiv">
+  <table id="productList" class="table table-hover">
+    <thead id="productListHead" class="table-light"></thead>
+    <tbody id="productListBody"></tbody>
+  </table>
+</div>
+<div id="productFooter">
+  <p id="totalAmount"></p>
+  <a id="generatePdf" class="btn btn-outline-primary">Generate PDF</a>
+</div>

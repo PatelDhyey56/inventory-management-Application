@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order</title>
+  <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+  <script src="/js/bootstrap.js"></script>
+  <link rel="stylesheet" href="src/css/allpage.css" />
+</head>
+
+<body onload="fetchData()">
+  <%- include("../components/navigation", {data})%>
+    <div class="div-second">
+      <section class="d-flex justify-content-center py-3">
+        <div class="card mx-5 mb-2 p-3"
+          style="width: 67rem;box-shadow: 0 0 10px #0000001a; border-right: 6px solid #002F4B; border-radius: 20px;">
+          <div>
+            <span class="fs-2" style="color: #002F4B;">Sales Orders</span>
+            <span class=" float-end">
+              <label for="fromDate" style="color: #002F4B;"> From:</label>
+              <input type="date" class="w-300 h-25 p-1" id="fromDate" onchange="searchdata()">
+              <label for="toDate" style="color: #002F4B; margin-left: 5px;"> To:</label>
+              <input type="date" class="w-300 h-25 p-1" id="toDate" onchange="searchdata()">
+            </span>
+            <hr>
+          </div>
+          <div>
+            <table class="table table-hover">
+              <thead>
+                <tr id="productHeader"></tr>
+              </thead>
+              <tbody id="productData"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+      <section class="d-flex justify-content-center">
+        <%- include("../components/pagginationComponent")%>
+      </section>
+    </div>
+    <script src="/js/commonFunction/commonFunction.js"></script>
+    <script src="/js/reports/orderReport.js"></script>
+</body>
+
+</html>

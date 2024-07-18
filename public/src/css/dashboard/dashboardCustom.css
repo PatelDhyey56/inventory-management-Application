@@ -1,0 +1,121 @@
+:root {
+  --dashboardsection: #f8fbff;
+}
+
+a {
+  text-decoration: none;
+}
+
+.dashboard-section {
+  max-width: 1200px;
+  background-color: var(--dashboardsection);
+}
+
+.dashboard-container {
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.dashboard-container p {
+  margin: 0;
+}
+
+.div-container__grid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 20px;
+}
+
+.div-container__grid__salesoverview,
+.div-container__grid__inventorysummary,
+.div-container__grid__purchaseoverview,
+.div-container__grid__latestpurchase,
+.div-container__grid__lowquantitystock {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  border-right: 6px solid #002f4b;
+}
+
+.div-container__grid__name {
+  font-weight: bold;
+  font-size: 20px;
+  /* padding-bottom: 20px; */
+  color: #002f4b;
+}
+.salesoverview__todaysales,
+.inventorysummary__totalproducts,
+.purchaseoverview__totalpurchase {
+  display: flex;
+  gap: 20px;
+}
+.todaysales_div,
+.totalproducts_div,
+.outofstock_div,
+.totalpurchase_div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.salesoverview__p,
+.inventorysummary__p,
+.purchaseoverview__p {
+  margin: 0;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.todaysales_div_div,
+.totalproducts_div_div,
+.outofstock_div_div,
+.totalpurchase_div_div {
+  display: flex;
+}
+
+/* latest purchase and low quantity stock */
+.div-container__grid__latestpurchase {
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+.div-container__grid__lowquantitystock {
+  grid-column-start: 2;
+  grid-column-end: 4;
+}
+
+.latestpurchase__div {
+  display: flex;
+  /* align-items: center; */
+  justify-content: space-between;
+}
+
+.latestpurchase__div a {
+  color: black;
+}
+
+.latestpurchase__table th,
+td {
+  padding: 10px;
+  text-align: center;
+  padding: 20px;
+}
+
+.latestpurchase__table tr:nth-child(even) {
+  background-color: rgb(233, 232, 232);
+}
+
+.lowquantitystock__table th,
+td {
+  padding: 10px;
+  text-align: center;
+}
+
+.lowquantitystock__table tr:nth-child(even) {
+  background-color: rgb(233, 232, 232);
+}
+.totalnumber {
+  font-size: 20px;
+  font-weight: 500;
+}

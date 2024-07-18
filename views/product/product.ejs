@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>product</title>
+  <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+  <script src="/js/bootstrap.js"></script>
+  <link rel="stylesheet" href="src/css/allpage.css" />
+  <link rel="stylesheet" href="src/css/product/listingPageStyle.css">
+</head>
+
+<body>
+  <%- include('../components/navigation', {data})%>
+    <%- include('../manager/deletePopup.ejs')%>
+      <section class="div-second manager-section p-3">
+        <div class="manager-container" id="managerGrid">
+          <div class=" main1">
+            <div class="header" id="head">
+
+              <img style="width: 40px; height: 40px;" src="icons/supply-chain.png" alt="">
+
+              <div class="mm2">
+                <p class="h2">Products</p>
+              </div>
+            </div>
+
+            <div class="filter1">
+              <div class="form-floating fill2">
+                <select name="productCategory" class="form-select" aria-label="select" id="categoryFilter"
+                  onchange="categoryFilter()"></select>
+                <label for="floatingPaymentStatus">Category</label>
+              </div>
+              <div class="newAdd">
+                <p class="btn btn-outline-dark filter1" onclick="addProduct()">Add New</p>
+              </div>
+              <!-- <div>
+                <p class="btn btn-outline-dark filter1" onclick="addCategory()">Add category</p>
+              </div> -->
+            </div>
+          </div>
+          <div class=" main2" id="main2">
+            <div class="filter3">
+              <input class="form-control form2 mr-sm-2 w-60" type="search" id="search" placeholder="Search"
+                onkeyup="search()" aria-label="Search" />
+            </div>
+          </div>
+        </div>
+        <div class="grid" id="grid">
+          <table class="table table-hover" id="table">
+            <thead class="table-light" id="thead">
+            </thead>
+            <tbody id="tbody"></tbody>
+          </table>
+          <div id="data"></div>
+        </div>
+        </div>
+        <%- include('../form/productForm')%>
+          <%- include('../form/category')%>
+            <section class="d-flex justify-content-center" id="paggination">
+              <%- include('../components/pagginationComponent')%>
+            </section>
+
+      </section>
+      <script src="js/commonFunction/commonFunction.js"></script>
+      <script src="js/products/product.js"></script>
+      <!-- <script src="js/products/category.js"></script> -->
+      <script src="js/products/productValidation.js"></script>
+      <script>
+        const roleId = '<%= data.roleId %>';
+      </script>
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manage Supplier</title>
+  <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+  <script src="/js/bootstrap.js"></script>
+  <link rel="stylesheet" href="src/css/allpage.css" />
+  <link rel="stylesheet" href="src/css/manageSuppliers/manageSuppliers.css" />
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="js/manageSuppliers/manageSuppliers.js"></script>
+  <script src="js/manageSuppliers/manageSupplierInsert.js"></script>
+  <script src="js/manageSuppliers/manageSupplierUpdate.js"></script>
+  <script src="js/commonFunction/commonFunction.js"></script>
+  <script src="js/manageSuppliers/manageSuppliersFormValidation.js"></script>
+  <script src="js/manageSuppliers/manageSuppliersFilter.js"></script>
+  <script src="js/components/messagePopUp.js"></script>
+  <script src="js/manageSuppliers/manageSupplierFileUpload.js"></script>
+</head>
+
+<body onload="getSuppliers()">
+  <%- include('../components/navigation', {data})%>
+    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModal" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title" id="deleteModal">Delete Supplier</h1>
+            <button type="button" class="btn-close" onclick="modelHide()" data-bs-dismiss="modal" aria-label="Close">
+            </button>
+          </div>
+          <div class="modal-body">
+            Are you sure you want to delete this supplier ?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" onclick="modelHide()" data-bs-dismiss="modal">No</button>
+            <button type="button" id="confirm" class="btn btn-danger">Yes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="reactivateModal" tabindex="-1" aria-labelledby="reactivateModal" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title" id="reactivateModal">Reactivate Supplier</h1>
+            <button type="button" class="btn-close" onclick="modelHide('#reactivateModal')" data-bs-dismiss="modal"
+              aria-label="Close">
+            </button>
+          </div>
+          <div class="modal-body">
+            Are you sure you want to reactivate this supplier ?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" onclick="modelHide('#reactivateModal')"
+              data-bs-dismiss="modal">No</button>
+            <button type="button" id="confirmreactivate" class="btn btn-danger">Yes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="div-second managesupplier-section">
+      <div class="managesupplier-container" id="managesupplier-container">
+        <div class="d-flex">
+          <img src="icons/cust.png" alt="" width="40px" height="40px" style="margin-top: 20px;">
+          <p class="managesupplierTitle">Suppliers</p>
+        </div>
+        <div class="managesupplier-container__button">
+          <p class="addnewsupplierbutton" onclick="addNewSupplier()">Add New</p>
+          <p class="supplierfilterbutton" onclick="supplierFilterShow()">Filter</p>
+        </div>
+        <select id="supplierStatus" onchange="getSuppliers()">
+          <option value="active" selected>Active</option>
+          <option value="inactive">Inactive</option>
+        </select>
+        <div class="importDataDiv">
+          <p class="importDataButton" onclick="showFileUpload()">Import Data</p>
+          <form enctype="multipart/form-data" id="supplierFileUploadForm" name="supplierFileUploadForm">
+            <input type="file" id="suppliersFile" name="suppliersFile" accept=".csv">
+            <p id="fileUploadButton" onclick="supplierFileUpload()">Upload File</p>
+          </form>
+        </div>
+
+      </div>
+      <%- include('../form/supplierForm')%>
+        <section class="d-flex justify-content-center" id="paggination">
+          <%- include('../components/pagginationComponent')%>
+        </section>
+    </section>
+</body>
+
+</html>

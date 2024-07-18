@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Purchase History</title>
+  <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+  <script src="/js/bootstrap.js"></script>
+  <link rel="stylesheet" href="src/css/allpage.css" />
+  <link rel="stylesheet" href="src/css/purchase/styles.css">
+  <style>
+    #table th {
+      background-color: #002f4b !important;
+      color: white !important;
+    }
+
+    #table td {
+      color: #5e5e5e !important;
+    }
+
+    #table tr:hover {
+      td {
+        color: #31384f !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <%- include('../components/navigation.ejs') %>
+    <%- include('../salesModule/pdfPopUp')%>
+      <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModal" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title" id="deleteModal">Delete Purchase Order</h1>
+              <button type="button" class="btn-close" onclick="modelHide()" data-bs-dismiss="modal" aria-label="Close">
+              </button>
+            </div>
+            <div class="modal-body">
+              Are you sure you want to delete this purchase order ?
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" onclick="modelHide()" data-bs-dismiss="modal">No</button>
+              <button type="button" id="confirm" class="btn btn-danger">Yes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="div-second pt-3">
+        <div class="outer-div">
+          <h3 class="mt-2 mb-5">Purchase History</h3>
+          <div class="d-flex mt-3 mb-5 justify-content-between">
+            <input type="search" placeholder="Search by supplier name, company name, phone number, order name or gst"
+              oninput="searchAnything(event)" aria-label="Search" class="form-control w-50">
+            <% if(!data?.storageId) { %>
+              <input type="hidden" id="admin" />
+              <% } %>
+                <div class="d-flex justify-content-end align-items-center">
+                  <button type="button" id="newForm" class="btn btn-outline-dark me-3" style="height: fit-content;"
+                    onclick="window.location.href = '/purchaseOrder'">
+                    + New
+                  </button>
+                  <% if(!data?.storageId) { %>
+                    <div class="form-floating me-3">
+                      <select name="storage_id" class="form-select" aria-label="select" id="floatingStorageId"
+                        onchange="triggerStorageStatus(event)">
+                      </select>
+                      <label for="floatingStorageId">Storage</label>
+                    </div>
+                    <% } %>
+                      <div class="form-floating">
+                        <select name="payment_status" class="form-select" aria-label="select" id="floatingPaymentStatus"
+                          onchange="triggerPaymentStatus(event)">
+                        </select>
+                        <label for="floatingPaymentStatus">Payment</label>
+                      </div>
+                </div>
+          </div>
+          <div class="mt-5" id="root">
+            <table class="table table-hover" id="table">
+              <thead class="table-light" id="thead">
+              </thead>
+              <tbody id="tbody"></tbody>
+            </table>
+          </div>
+          <%- include('../components/pagginationComponent')%>
+        </div>
+      </div>
+</body>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/purchase/invoiceView.js"></script>
+<script src="js/commonFunction/commonFunction.js"></script>
+<script src="/js/purchase/generators.js"></script>
+<script src="/js/purchase/history.js"></script>
+
+</html>

@@ -1,0 +1,101 @@
+body {
+  /* font-family: Arial, sans-serif; */
+  background-color: #f3f3f3;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.main {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px 0.15px rgba(14, 0, 145, 0.2);
+  padding: 20px;
+  width: 300px;
+}
+.main_err {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 7px;
+}
+
+.main h2,
+h1 {
+  color: #001e72;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #555;
+  font-weight: bold;
+}
+
+input[type='text'],
+input[type='email'],
+input[type='password'],
+select {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+#button {
+  padding: 15px;
+  border-radius: 10px;
+  border: none;
+  background-color: #4c77af;
+  color: white;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+}
+#button:hover {
+  background-color: #4caf65;
+  color: #ffffff;
+}
+
+button[type='button'] {
+  padding: 15px;
+  border-radius: 10px;
+  border: none;
+  background-color: #4c77af;
+  color: white;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+}
+
+button[class='button']:hover {
+  background-color: #4caf65;
+  color: #ffffff;
+}
+a {
+  text-decoration: none;
+  font-size: 15px;
+  color: black;
+}
+a:hover {
+  color: darkblue;
+  font-style: italic;
+  /* background-color: skyblue; */
+}
+.eyes {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  width: 19px;
+  left: 119px;
+  margin: 0 auto;
+  top: 29px;
+}
+.eye1 {
+  width: 20px;
+}

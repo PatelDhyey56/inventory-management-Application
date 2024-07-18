@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Categoty</title>
+  <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+  <script src="/js/bootstrap.js"></script>
+  <link rel="stylesheet" href="src/css/allpage.css" />
+  <link rel="stylesheet" href="src/css/product/listingPageStyle.css">
+  <style>
+    .card1 {
+      margin: 20px 25px 20px 0px;
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 auto;
+      width: 1000px;
+    }
+
+    .cardIn {
+      margin: 0 auto;
+      padding: 10px 0px 0 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      gap: 6px;
+      display: flex;
+      background-color: aliceblue;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      height: 90px;
+      width: 300px;
+    }
+  </style>
+</head>
+
+<body>
+  <%- include('../components/navigation', {data})%>
+    <section class="div-second manager-section p-3">
+      <div class="manager-container" id="managerGrid">
+        <div class=" main1">
+          <div class="header" id="head">
+
+            <img style="width: 40px; height: 40px;" src="icons/supply-chain.png" alt="">
+
+            <div class="mm2">
+              <p class="h2">Category</p>
+            </div>
+          </div>
+
+          <div class="filter1">
+            <div>
+              <p class="btn btn-outline-dark filter1" onclick="addCategory()">Add category</p>
+            </div>
+            <div>
+              <select name="categoryStatus" class="form-select" aria-label="select" id="categoryStatus"
+                onchange="fetchcategory()">
+                <option value="Active">Active</option>
+                <option value="Inactive">Inactive</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class=" main2" id="main2">
+          <div class="filter3">
+            <input class="form-control form2 mr-sm-2 w-60" type="search" id="categoryFilter" placeholder="Search"
+              oninput="categoryFilter()" aria-label="Search" />
+          </div>
+        </div>
+        <div class="grid" id="grid">
+          <div class="cards " id="cards">
+          </div>
+        </div>
+      </div>
+
+      <%- include('../form/category')%>
+        <section class="d-flex justify-content-center" id="paggination">
+          <%- include('../components/pagginationComponent')%>
+        </section>
+    </section>
+    <script src="js/commonFunction/commonFunction.js"></script>
+    <script src="js/components/messagePopUp.js"></script>
+    <script src="js/products/category.js"></script>
+</body>
+
+</html>

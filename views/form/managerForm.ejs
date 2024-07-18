@@ -1,0 +1,60 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manager</title>
+  <link rel="stylesheet" href="src/css/form.css">
+</head>
+
+<body class="body">
+  <div class="row form-popup" id="myForm">
+    <div class="col-md-12 " data-bs-spy="scroll">
+      <form method="post" id="form">
+        <h6 onclick="closeForm()" class="text-danger"
+          style="margin-left: 390px; margin-top: 5px; cursor: pointer; font-size: 25px;">
+          X</h6>
+        <div class="container">
+          <h1>Manager Details</h1>
+          <fieldset>
+            <div class="form-floating mb-3">
+              <input name="firstname" type="text" class="form-control managerInputField" id="floatingInput"
+                placeholder="name@example.com" required>
+              <label for="floatingInput">First Name </label>
+            </div>
+
+            <div class="form-floating mb-3">
+              <input name="lastname" type="text" class="form-control managerInputField" id="floatingInput"
+                placeholder="name@example.com" required>
+              <label for="floatingInput">Last Name </label>
+            </div>
+
+            <div class="form-floating mb-3">
+              <input name="email" type="email" class="form-control managerInputField" id="email"
+                placeholder="name@example.com" required>
+
+              <label for="email">Email address</label>
+            </div>
+            <div class="form-floating customerform__errordiv">
+              <select name="state" id="state" class="form-select" aria-label="Floating label select example"
+                onchange="getAllStore(this.value)">
+              </select>
+            </div>
+
+
+            <div class="form-floating customerform__errordiv">
+              <select name="place" id="place" class="form-select" aria-label="Floating label select example">
+
+              </select>
+            </div>
+          </fieldset>
+          <div id="error"></div>
+          <button type="button" id="submitBtn" class="btn btn-outline-primary" onclick="submitbtn()">Submit</button>
+          <button type="reset" class="btn btn-outline-danger">Reset</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>

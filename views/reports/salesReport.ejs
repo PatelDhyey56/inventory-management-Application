@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+  <script src="/js/bootstrap.js"></script>
+  <link rel="stylesheet" href="src/css/allpage.css" />
+  <link rel="stylesheet" href="/charts/apexcharts.css" />
+  <style>
+    .wid-50 {
+      width: 140px;
+    }
+  </style>
+</head>
+
+<body onload="fetchData()">
+  <%- include("../components/navigation", {data})%>
+    <div class="div-second">
+      <div class="d-flex justify-content-center align-items-center">
+        <div class="d-flex flex-column justify-content-center my-3">
+          <section class="card m-2 p-4"
+            style="width: 30rem; box-shadow: 0 0 10px #0000001a; border-right: 6px solid #002F4B; border-radius: 20px;">
+            <span class="fs-2" style="color: #002F4B;">Overview</span>
+            <hr>
+            <div class="d-flex justify-content-center align-items-center my-3 h-100">
+              <div class="mx-3" id="Sales">
+              </div>
+            </div>
+          </section>
+          <section class="card m-3 p-3"
+            style="width: 30rem; box-shadow: 0 0 10px #0000001a; border-right: 6px solid #002F4B; border-radius: 20px;">
+            <div>
+              <span class="fs-2" style="color: #002F4B;">Best selling category</span>
+              <hr>
+            </div>
+            <div>
+              <table class="table table-hover">
+                <thead>
+                  <tr id="categorytHeader"></tr>
+                </thead>
+                <tbody id="categoryData"></tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+        <div>
+          <section class="m-2 p-4"
+            style="width: 30rem; box-shadow: 0 0 10px #0000001a; border-right: 6px solid #002F4B; border-radius: 20px;">
+            <div>
+              <p class="fs-2" style="color: #002F4B;">Monthly Report :</p>
+              <div id="monthreport"></div>
+            </div>
+          </section>
+        </div>
+      </div>
+      <section class="d-flex justify-content-center">
+        <div class="card mx-5 mb-2 p-3"
+          style="width: 67rem;box-shadow: 0 0 10px #0000001a; border-right: 6px solid #002F4B; border-radius: 20px;">
+          <div>
+            <span class="fs-2" style="color: #002F4B;">Best selling Product</span>
+            <span class="float-end m-3" onclick="showProduct()">See All</span>
+            <hr>
+          </div>
+          <div>
+            <table class="table table-hover">
+              <thead>
+                <tr id="productHeader"></tr>
+              </thead>
+              <tbody id="productData"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script src="/charts/apexcharts.min.js"></script>
+    <script src="/js/reports/salesreport.js"></script>
+</body>
+
+</html>

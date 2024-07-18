@@ -1,0 +1,75 @@
+/* .container {
+  margin: 33px 28px 47px 245px;
+  width: auto;
+} */
+.allfilters {
+  justify-content: end;
+  display: flex;
+}
+.formHeader {
+  display: flex;
+}
+.filter {
+  margin-right: 1%;
+  display: flex;
+  align-items: center;
+}
+.grid {
+  height: 45dvh;
+  overflow: scroll;
+  margin-top: 5%;
+}
+.insertFields {
+  margin-bottom: 2%;
+}
+.insertLabels {
+  margin-bottom: 1%;
+}
+#insertSubmit {
+  width: 100%;
+}
+#gridComponent {
+  padding-top: 7%;
+  width: 95%;
+  margin: 0 auto;
+}
+#tbody {
+  overflow-y: scroll;
+}
+
+#thead {
+  position: sticky;
+  top: 0;
+}
+.deleted {
+  text-align: center;
+  font-weight: bold;
+}
+#searchbar {
+  margin-right: auto;
+  width: auto;
+}
+.table th {
+  background-color: #002f4b !important;
+  color: white !important;
+}
+#paggination {
+  display: flex;
+  justify-content: center;
+}
+
+.fill2 {
+  margin-left: 1%;
+}
+
+.modal-content__pdf {
+  width: 800px;
+  margin: 0 auto;
+  position: absolute;
+  /* right: 2%; */
+  /* transform: translate(10%, 10%); */
+}
+#error {
+  text-align: center;
+  font-size: large;
+}

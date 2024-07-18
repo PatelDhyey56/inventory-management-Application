@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+  <script src="/js/bootstrap.js"></script>
+  <link rel="stylesheet" href="src/css/allpage.css" />
+  <link rel="stylesheet" href="src/css/dashboard/dashboardCustom.css" />
+  <link rel="stylesheet" href="/charts/apexcharts.css" />
+  <title>Dashboard</title>
+  <style>
+
+  </style>
+</head>
+
+<body>
+  <%- include('../components/navigation', {data})%>
+    <section class="div-second dashboard-section">
+      <div class="dashboard-container">
+        <div class="div-container__grid">
+          <div class="div-container__grid__salesoverview">
+            <p class="div-container__grid__name">Sales Overview</p>
+            <hr>
+            <div class="salesoverview__todaysales">
+              <div id="daySales"></div>
+            </div>
+          </div>
+          <div class="div-container__grid__inventorysummary">
+            <p class="div-container__grid__name px-3">Inventory Summary</p>
+            <hr>
+            <div class=" inventorysummary__totalproducts">
+              <div class="totalproducts_div px-3 text-center">
+                <p class=" inventorysummary__p">Total Products</p>
+                <div class="totalproducts_div_div px-3 text-center">
+                  <img src=" icons/pro.png" alt="img" width="40" height="40" /><br>
+                  <p id="totalStock" class="mt-2 h5 ml-4">100</p>
+                </div>
+              </div>
+              <div class="outofstock_div px-3 text-center">
+                <p class="inventorysummary__p">Out Of Stock</p>
+                <div class=" outofstock_div_div px-3 text-center">
+                  <img src="icons/out.png" alt="img" width="40" height="40" /><br>
+                  <p id="outStock" class="mt-2 h5 ml-1">10</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="div-container__grid__purchaseoverview">
+            <p class="div-container__grid__name">Order Overview</p>
+            <hr>
+            <div class="purchaseoverview__totalpurchase">
+              <div class="totalpurchase_div px-3 text-center">
+                <p class="purchaseoverview__p">Total Sales</p>
+                <span>
+                  <img src="icons/sales.png" alt="img" width="40" height="40" />
+                </span>
+                <p id="totalOrder" class="totalnumber">80</p>
+              </div>
+              <div class="outofstock_div px-3 text-center">
+                <p class="purchaseoverview__p">Sales Cost</p>
+                <span>
+                  <img src="icons/cost.png" alt="img" width="40" height="40" />
+                </span>
+                <p id="orderCost" class="totalnumber">&#8377;1000</p>
+              </div>
+            </div>
+          </div>
+          <div class="div-container__grid__latestpurchase">
+            <p class="div-container__grid__name">Low Quantity Stock
+              <select class="float-end btn btn-primary" name="lowProduct" id="lowProduct"
+                onchange="changeproductQuantity()">
+                <option value="10">10</option>
+                <option value="100">100</option>
+                <option value="200">200</option>
+                <option value="300">300</option>
+              </select>
+            </p>
+            <hr>
+            <div class="overflow-y-scroll" style="max-height: 410px">
+              <table class="table table-hover">
+                <thead id="lowQuantityStockTableHead">
+                </thead>
+                <tbody id="lowQuantityStockTableBody">
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="div-container__grid__lowquantitystock">
+            <div class="latestpurchase__div">
+              <p class="div-container__grid__name">Sales Orders</p>
+              <a href="/SalesorderDashbord">See all</a>
+            </div>
+            <hr>
+            <table class="table table-hover">
+              <thead id="orderTableHead">
+              </thead>
+              <tbody id="orderTableBody">
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="/js/commonFunction/commonFunction.js"></script>
+    <script src="/charts/apexcharts.min.js"></script>
+    <script src="/js/dashboard/dashboard.js"></script>
+</body>
+
+</html>

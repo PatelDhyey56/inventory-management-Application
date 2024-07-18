@@ -1,0 +1,112 @@
+/* :root {
+  --managecustomersection: #f0f1f3;
+} */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.header{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+a {
+  text-decoration: none;
+}
+
+#myForm {
+  display: none;
+  position: absolute;
+  top: 0%;
+  left: 30%;
+}
+#btn {
+  margin-left: 964px;
+  margin-bottom: 14px;
+}
+/* .managecustomer-section {
+  max-width: 1300px;
+  height: 100dvh;
+  background-color: var(--managecustomersection);
+} */
+
+.managecustomer-container {
+  width: 1200px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.managecustomer-container__button {
+  display: flex;
+  gap: 20px;
+}
+
+.store__actionbutton {
+  cursor: pointer;
+  padding: 5px;
+}
+
+/* Style for the table */
+
+/* .store__table {
+  width: auto;
+  max-width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  table doesn't overflow container 
+   border-collapse: collapse;
+  border-spacing: 0;
+  white-space: nowrap; 
+  Prevents text wrapping */
+
+
+/* Style for table header */
+.store__table th {
+  background-color: #002f4b;
+  color: white;
+  font-weight: bold;
+  padding: 12px;
+  text-align: left;
+  border-bottom: 2px solid #ddd;
+}
+
+/* Style for table rows */
+.store__table tr {
+  border-bottom: 1px solid #ddd;
+}
+
+/* Alternate row color */
+.store__table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Hover effect for rows */
+.store__table tr:hover {
+  background-color: #eaf1fa;
+  color: #31384f;
+}
+
+.store__table {
+  cursor: pointer;
+  padding: 5px;
+  margin-left: 98px;
+  color: #5e5e5e;
+}
+
+.store__table th,
+.store__table td {
+  padding: 10px;
+  text-align: left;
+}
+
+/* Style for the action column */
+.store__actioncolumn {
+  width: 100px;
+}
+
+/* paggination */
+.pagginationcontainer {
+  left: 30%;
+}
+

@@ -1,0 +1,40 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manager</title>
+  <link rel="stylesheet" href="src/css/form.css">
+  <link rel="stylesheet" href="src/css/profile/uploadImageForm.css">
+</head>
+
+<body class="body">
+  <div class="row form-popup" id="myForm">
+    <div class="col-md-12 " data-bs-spy="scroll">
+      <form method="post" id="form" enctype="multipart/form-data" action="/imageUpload">
+        <h6 onclick="closeForm()" class="text-danger" style="margin-left: 390px; margin-top: 5px; cursor: pointer;">
+          Close</h6>
+        <div class="container">
+          <h1>Upload Image</h1>
+          <fieldset>
+            <div class="form-floating mb-3">
+              <input name="newImage" type="file" class="form-control" id="choose-file"
+                accept="image/png, image/jpg, image/jpeg" required>
+              <label for="floatingInput">Upload new Image
+              </label>
+              <span id="errorText"></span>
+            </div>
+          </fieldset>
+          <div id="preview">
+          </div>
+          <!-- <button type="submit" id="UploadImage" class="btn btn-outline-primary">Upload<img
+              class="upload-logo" src="/icons/upload.svg" alt="" height="20" width="20"></button> -->
+        </div>
+      </form>
+    </div>
+  </div>
+  <script src="js/profile/imageUploadForm.js"></script>
+
+</body>
+
+</html>

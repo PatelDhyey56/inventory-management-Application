@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>allProducts</title>
+  <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+  <script src="/js/bootstrap.js"></script>
+  <link rel="stylesheet" href="src/css/allpage.css" />
+</head>
+
+<body onload="fetchData()">
+  <%- include("../components/navigation", {data})%>
+    <div class="div-second p-5">
+      <section class="d-flex justify-content-center py-3">
+        <div class="h-100 p-3" style=" width: 67rem; box-shadow: 0 0 10px #0000001a; border-right: 6px solid #002F4B;
+        border-radius: 20px;">
+          <h3 style="color: #002F4B;">
+            <img src="icons/supply-chain.png" alt="img" height="40" width="40">
+            Product List :
+          </h3>
+          <table class="table table-hover">
+            <thead>
+              <tr id="productHeader"></tr>
+            </thead>
+            <tbody id="productData"></tbody>
+          </table>
+          <section class="d-flex justify-content-center">
+            <%- include("../components/pagginationComponent")%>
+        </div>
+      </section>
+    </div>
+    <script src="/js/reports/allProducts.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details PDF</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .productPdf-div {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .tablestyle {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    .information__table td,
+    .information__table th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    .pdfTitle {
+      text-align: center;
+      font-size: 25px;
+      font-weight: 400;
+    }
+
+    .productdetails__table {
+      border-collapse: separate;
+      border-spacing: 0 10px;
+    }
+
+    .productdetails__table td,
+    .productdetails__table th {
+      border-bottom: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+  </style>
+</head>
+
+<body>
+  <section class="productPdf-section">
+    <div class="productPdf-div">
+      <table class="tablestyle information__table">
+        <tr>
+          <td colspan="4" class="pdfTitle">Inventory Management</td>
+        </tr>
+        <tr>
+          <td colspan="<%= data.maximumStockQunatity ? '3' : '4'%>">
+            Report Type: <%= data.reportType ? data.reportType : "-" %>
+          </td>
+          <%if(data.maximumStockQunatity){%>
+            <td colspan="1">
+              Maximum Stock Quantity: <%= data.maximumStockQunatity%>
+            </td>
+            <%}%>
+
+        </tr>
+        <tr>
+          <td colspan="3">
+            Storage Name: <%= data.storeDetails && data.storeDetails[0].StorageName ? data.storeDetails[0].StorageName
+              : "-" %>
+          </td>
+          <td>
+            Storage Type: <%= data.storeDetails && data.storeDetails[0].StorageType ? data.storeDetails[0].StorageType
+              : "-" %>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            City: <%= data.storeDetails && data.storeDetails[0].City ? data.storeDetails[0].City : "-" %>
+          </td>
+          <td colspan="2">
+            State: <%= data.storeDetails && data.storeDetails[0].State ? data.storeDetails[0].State : "-" %>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="4">
+            Category: <%= data.categoryName ? data.categoryName : "-" %>
+          </td>
+        </tr>
+      </table>
+
+      <%if(data.productDetails){%>
+        <table class="tablestyle productdetails__table">
+          <tr>
+            <%for(let key in data.productDetails[0]){%>
+              <th>
+                <%switch(key){ case 'product_name' :%>
+                  Product Name
+                  <% break; case 'sku_id' : %>
+                    Sku Id
+                    <% break; case 'cost' : %>
+                      Selling Cost
+                      <% break; case 'stock' :%>
+                        Stock
+                        <%}%>
+              </th>
+              <%}%>
+          </tr>
+          <%for(let element of data.productDetails){%>
+            <tr class="productDetailsRow">
+              <%for(let key in element){%>
+                <td>
+                  <%= element[key]%>
+                </td>
+                <%}%>
+            </tr>
+            <%}%>
+        </table>
+        <%}%>
+    </div>
+  </section>
+</body>
+
+</html>

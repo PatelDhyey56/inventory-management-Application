@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Store</title>
+  <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+  <script src="/js/bootstrap.js"></script>
+  <script src="js/store/store.js"></script>
+  <script src="js/store/storeFormValidation.js"></script>
+  <script src="js/commonFunction/commonFunction.js"></script>
+  <link rel="stylesheet" href="src/css/manageCustomers/manageCustomers.css" />
+  <link rel="stylesheet" href="src/css/dashboard/dashboard.css" />
+  <link rel="stylesheet" href="src/css/allpage.css" />
+  <link rel="stylesheet" href="src/css/store/store.css" />
+  <link rel="stylesheet" href="/sweetalert2/sweetalert2.min.css">
+  <script src="/sweetalert2/sweetalert2.min.js"></script>
+</head>
+
+<body onload="getStore()">
+  <%- include('../components/navigation', {data})%>
+    <div class="div-second managecustomer-section">
+      <div class="managecustomer-container" id="child">
+        <header id="header">
+          <div class="header">
+            <img src="/icons/house-fill.svg" width="40px" height="40px" alt="">
+            <h3 class="text-center" style="font-size: 34px;
+            padding-top: 20px;">Warehouses</h3>
+          </div><br>
+          <input class="form-control form2 mr-sm-2 w-50" type="search" style="margin-left: 280px;" id="searchbar"
+            placeholder="Search" onkeyup="search(this.value)" aria-label="Search" />
+        </header>
+        <main>
+          <section id="store-section">
+            <div class="container">
+              <div class="row1">
+                <img src="/icons/house-add-fill.svg" id="btn" onclick="addNewStore()" width="40px"
+                  style="cursor: pointer;" alt="">
+              </div>
+            </div>
+          </section>
+          <%- include('../form/storeForm')%>
+            <section class="d-flex justify-content-center" id="paggination">
+              <%- include('../components/pagginationComponent')%>
+            </section>
+        </main>
+      </div>
+    </div>
+    <script src="/js/commonFunction/commonFunction.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invoice</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    .invoice__section {
+      max-width: 1300px;
+      /* background-color: rgb(218, 218, 218); */
+    }
+
+    .invoice__container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .invoice__header {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .invoice__header h1 {
+      text-align: center;
+      font-size: 40px;
+      padding: 20px;
+      /* background-color: whitesmoke; */
+      border-radius: 10px;
+    }
+
+    .personalDetails {
+      display: flex;
+      gap: 10px;
+    }
+
+    .invoicetable__div {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      position: relative;
+    }
+
+    .invoicecommon__tablestyle {
+      width: 100%;
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+
+    .invoicecommon__tablestyle th {
+      /* background-color: #002f4b; */
+      color: black;
+      font-weight: bold;
+      padding: 12px;
+      text-align: left;
+      border-radius: 10px;
+    }
+
+    .invoicecommon__tablestyle td {
+      /* background-color: whitesmoke; */
+      color: black;
+      padding: 12px;
+      text-align: left;
+      border-radius: 10px;
+    }
+
+    .invoice__table,
+    .personaldetails__table {
+      width: 40%;
+    }
+
+    .personaldetailsaddress__table {
+      width: 60%;
+    }
+
+    .inventory__table tr {
+      border-bottom: 2px solid #ddd;
+    }
+
+    /* Alternate row color */
+    .inventory__table tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    .inventory__table tr {
+      border-bottom: 1px solid #ddd;
+    }
+
+    .balance__table {
+      width: 30%;
+    }
+  </style>
+</head>
+
+<body>
+  <section class="invoice__section">
+    <div class="invoice__container">
+      <header class="invoice__header">
+        <h1>
+          <%=(type=='invoice' ?'Sales Invoice':'Purchase Invoice')%>
+        </h1>
+      </header>
+      <div class="personalDetails">
+        <table class="invoicecommon__tablestyle personaldetails__table">
+          <tr>
+            <th>FirstName</th>
+            <td>
+              <%=data.firstname%>
+            </td>
+          </tr>
+          <tr>
+            <th>LastName</th>
+            <td>
+              <%=data.lastname%>
+            </td>
+          </tr>
+          <tr>
+            <th>Contact Number</th>
+            <td>
+              <%=data.phonenumber%>
+            </td>
+          </tr>
+        </table>
+        <table class="invoicecommon__tablestyle personaldetailsaddress__table">
+          <tr>
+            <th>Address</th>
+            <td>
+              <%= typeof data.shipping_address !=="undefined" ? data.shipping_address : "-" %>
+            </td>
+          </tr>
+          <tr>
+            <th>City</th>
+            <td>
+              <%=data.city_name%>
+            </td>
+          </tr>
+          <tr>
+            <th>State</th>
+            <td>
+              <%=data.state_name%>
+            </td>
+          </tr>
+        </table>
+
+      </div>
+      <div class=" invoicetable__div">
+        <table class="invoicecommon__tablestyle invoice__table">
+          <tr>
+            <th>Invoice #</th>
+            <td>
+              <%=data.order_id%>
+            </td>
+          </tr>
+          <tr>
+            <th>Date</th>
+            <td>
+              <%=data.order_date%>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <table class="invoicecommon__tablestyle inventory__table">
+
+        <tr>
+          <th>Item</th>
+          <th>SKU</th>
+          <th>Rate</th>
+          <th>Quantity</th>
+          <th>Price</th>
+        </tr>
+
+
+        <%for(ele of products){%>
+          <tr>
+            <td>
+              <%=ele.product_name%>
+            </td>
+            <td>
+              <%=ele.sku_id%>
+            </td>
+            <td>
+              <%=ele.cost%>
+            </td>
+            <td>
+              <%=ele.quantity%>
+            </td>
+            <td>
+              <%=ele.cost*ele.quantity%>
+                </span>
+            </td>
+          </tr>
+          <%}%>
+
+      </table>
+      <table class="invoicecommon__tablestyle balance__table">
+        <tr>
+          <th>Total</th>
+          <td>
+            <%=data.amount%>
+          </td>
+        </tr>
+        <tr>
+          <th>Amount Paid</th>
+          <td>
+            <%=(data.payment_status=='Pending'?0:data.amount)%>
+          </td>
+        </tr>
+        <tr>
+          <th>Balance Due</th>
+          <td>
+            <%=(data.payment_status=='Pending'?data.amount:0)%>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    </div>
+  </section>
+</body>
+
+</html>

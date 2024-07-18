@@ -1,0 +1,82 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.invoice__section {
+  max-width: 1300px;
+  background-color: rgb(185, 184, 184);
+}
+
+.invoice__container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.invoice__header {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.invoice__header h1 {
+  text-align: center;
+  font-size: 40px;
+  padding: 20px;
+  background-color: whitesmoke;
+  border-radius: 10px;
+}
+
+.invoice__header address {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.invoicetable__div {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+}
+.invoicecommon__tablestyle {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.invoicecommon__tablestyle th {
+  background-color: #002f4b;
+  color: white;
+  font-weight: bold;
+  padding: 12px;
+  text-align: left;
+  border-bottom: 2px solid #ddd;
+}
+
+/* Style for table rows */
+.invoicecommon__tablestyle tr {
+  border-bottom: 1px solid #ddd;
+}
+
+/* Alternate row color */
+.invoicecommon__tablestyle tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.invoice__table {
+  width: 50%;
+}
+
+/* .invoicetable__div {
+  display: flex;
+  align-items: end;
+} */
+
+.inventory__table {
+}
+
+.balance__table {
+  width: 50%;
+}

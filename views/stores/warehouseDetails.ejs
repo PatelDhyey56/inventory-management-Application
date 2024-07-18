@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Details</title>
+  <script src="/js/bootstrap.js"></script>
+  <script src="/sweetalert2/sweetalert2.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="src/css/allpage.css" />
+  <link rel="stylesheet" href="src/css/product/listingPageStyle.css">
+  <link rel="stylesheet" href="/sweetalert2/sweetalert2.min.css">
+  <style>
+    h4{
+      color: #002f4b;
+    }
+  </style>
+</head>
+
+<body>
+  <%- include('../components/navigation',{data})%>
+    <div class="div-second">
+      <div class="container p-3">
+        <div class="row ">
+          <div class="col p-5">
+            <div class="d-flex">
+              <img src="/icons/sview1.png" width="40px" height="40px" alt="">&emsp;
+              <h2>Store View</h2>
+            </div>
+            <input class="form-control form2 mr-sm-2 w-50" type="search" style="margin-left: 280px;" id="searchbar"
+            placeholder="Search" onkeyup="search(this.value)" aria-label="Search" />
+            <a href="/store" class="btn btn-dark" style="margin-left: 926px;">Back</a>
+            <h4 id="nameWarehouse"></h4>
+            <div class="grid" id="grid">
+              <br>
+              <table class="table table-hover" id="table">
+                <thead class="table-light" id="thead">
+                </thead>
+                <tbody id="tbody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section class="d-flex justify-content-center" id="paggination">
+        <%- include('../components/pagginationComponent')%>
+      </section>
+    </div>
+    <script src="js/commonFunction/commonFunction.js"></script>
+    <script src="js/store/storeDetails.js"></script>
+</body>
+
+</html>

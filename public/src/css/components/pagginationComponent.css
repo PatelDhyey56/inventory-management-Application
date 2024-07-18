@@ -1,0 +1,88 @@
+/* :root {
+  --pagginationsection: #f0f1f3;
+  --pagginationcontainer: #eaf1fa;
+  --pagginationbutton: #f9f9f9;
+} */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.pagginationsection {
+  max-width: 280px;
+  background-color: var(--pagginationsection);
+  padding: 10px;
+  display: none;
+}
+
+.pagginationcontainer {
+  padding: 10px;
+  background-color: var(--pagginationcontainer);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.rowpaggination {
+  display: flex;
+  margin: 0 -15px;
+}
+
+.colpaggination {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.pagenumber {
+  display: flex;
+  align-items: center;
+}
+
+.pagenumber p {
+  font-size: 20px;
+  margin: 0 auto;
+}
+
+.pagginationbutton {
+  font-size: 20px;
+  background-color: var(--pagginationbutton);
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+}
+.arrowPage {
+  background-color: #31384f;
+  border-radius: 30%;
+  font-size: 12px;
+  color: white;
+}
+.nextPage1 {
+  top: 17px;
+  position: absolute;
+  left: 161px;
+}
+.lastPage1 {
+  top: 22px;
+  position: absolute;
+
+  margin: 0 auto;
+}
+.firstPage1 {
+  position: absolute;
+  margin: 0 auto;
+  top: 23px;
+}
+.prevPage1 {
+  position: absolute;
+  margin: 0 auto;
+  top: 16px;
+  left: 67px;
+}

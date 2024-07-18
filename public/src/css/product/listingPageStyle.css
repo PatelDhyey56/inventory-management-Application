@@ -1,0 +1,120 @@
+.form-popup {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  top: 50px;
+  z-index: 9;
+  width: 500px;
+  right: 490px;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+  /* height: 1000px; */
+}
+
+.filter1 {
+  display: flex;
+}
+.stockout td{
+background-color: #ffe1e1;
+}
+
+.form-control {
+  width: 700px;
+  display: flex;
+}
+
+.form-inline {
+  display: flex;
+  margin-left: 200px;
+}
+
+.row2 {
+  margin-top: 26px;
+  margin-left: 100px;
+}
+
+.row1 {
+  margin-top: 33px;
+  margin-left: 110px;
+  display: flex;
+}
+
+#btn {
+  margin-left: 620px;
+}
+.span2 {
+  rotate: 180deg;
+  cursor: pointer;
+}
+.span1 {
+  cursor: pointer;
+}
+th {
+  background-color: #002f4b !important;
+  color: white !important;
+}
+.table tr {
+  border-bottom: 1px solid #ddd;
+}
+.table tr:nth-child(2n) {
+  background-color: #f9f9f9;
+}
+.table tr:hover {
+  background-color: #d7e7ff;
+}
+.grid {
+  margin-top: 3%;
+}
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: #5e5e5e;
+}
+.imgMain {
+  width: 40px;
+  height: 40px;
+}
+.h2 {
+  padding: 20px 0;
+  font-size: 30px;
+  font-weight: 400;
+}
+.header {
+  align-items: center;
+  display: flex;
+  /* padding-top: 25px; */
+}
+.mm2 {
+  margin-left: 20px;
+}
+
+.main1 {
+  display: flex;
+  align-items: center;
+  padding-top: 25px;
+  justify-content: space-between;
+}
+
+.main2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+table,
+th,
+td {
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: collapse;
+  text-align: center;
+}
+/* #paggination {
+  display: flex;
+  justify-content: center;
+} */

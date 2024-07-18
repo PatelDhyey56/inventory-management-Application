@@ -1,0 +1,170 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.nav-costom1 {
+  width: 210px;
+}
+
+.logout-container {
+  display: flex;
+  justify-content: center;
+}
+
+.nav-costom2 {
+  height: 70px;
+  width: 1155px;
+}
+
+#navdiv1 {
+  background-color: red;
+  margin: 0px auto;
+  position: relative;
+  width: 1400px;
+}
+
+.main-div {
+  position: absolute;
+}
+
+.user-image {
+  cursor: pointer;
+}
+.side-bar {
+  z-index: 11;
+  border: none;
+  overflow: hidden;
+}
+.width-100-hover {
+  background-color: #365c72;
+}
+.navigationDiv {
+  width: 170px;
+  border-radius: 10px;
+  z-index: 11;
+  border: none;
+  overflow: hidden;
+}
+.navigationDiv:hover {
+  background-color: #0c5077;
+}
+.navigationSubDiv {
+  width: 150px;
+  border-radius: 10px;
+  z-index: 11;
+  border: none;
+  overflow: hidden;
+}
+.navigationSubDiv:hover {
+  background-color: #0c5077;
+}
+.div-h {
+  min-height: 800px !important;
+}
+
+.bgColor {
+  background-color: #002f4b;
+  border-radius: 0 37px 0 0;
+  position: fixed;
+  left: 0;
+  height: 100vh;
+  width: 232px;
+}
+
+img {
+  color: white;
+}
+
+.user-img {
+  cursor: pointer;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {
+  background-color: #ddd;
+}
+
+.dropimg {
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.dropdown {
+  position: relative;
+  display: inline;
+  right: 60px;
+  top: 5px;
+}
+
+.dropdown-content {
+  display: none;
+  border-radius: 10%;
+  position: absolute;
+  background-color: #ffffff;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {
+  background-color: #ddd;
+}
+
+.show {
+  display: block;
+}
+
+.notifications-box {
+  position: absolute;
+  right: 60px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: white;
+  top: 75px;
+  overflow: hidden;
+}
+
+#notification:hover {
+  cursor: pointer;
+}
+
+.notification {
+  padding: 10px;
+
+  a {
+    color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));
+  }
+}
+
+.notification:hover {
+  background-color: whitesmoke;
+}
+
+.notification:nth-child(n + 2) {
+  border-top: 1px solid black;
+}
+
+.unread {
+  color: blue;
+}
+
+.edit-link a,
+img {
+  margin: 5px;
+}

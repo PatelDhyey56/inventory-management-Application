@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manage Customers</title>
+  <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+  <script src="/js/bootstrap.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+
+  <link rel="stylesheet" href="src/css/allpage.css" />
+  <link rel="stylesheet" href="src/css/reports/reportPdf.css" />
+  <script src="js/reports/pdfGenerate/reportPdf.js"></script>
+  <script src="js/reports/pdfGenerate/productReport.js"></script>
+  <script src="js/commonFunction/commonFunction.js"></script>
+  <script src="js/components/messagePopUp.js"></script>
+</head>
+
+<body onload="reportGenerateOption()">
+  <%- include('../components/navigation', {data})%>
+    <section class="div-second reportPdf-section">
+      <div class="reportPdf-container" id="reportPdf-container">
+        <p class="reportPdfTitle">Customized Report</p>
+        <%- include('../components/messagePopUp')%>
+          <div class="reportGenerate-div">
+            <%if(data?.roleId===4){%>
+              <div class="storageSelectDiv">
+                <p>Please Select Storage</p>
+                <select id="storageDetails">
+                </select>
+              </div>
+              <%}%>
+          </div>
+    </section>
+</body>
+
+</html>

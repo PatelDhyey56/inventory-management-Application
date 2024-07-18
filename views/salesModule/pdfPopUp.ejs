@@ -1,0 +1,18 @@
+<div class="modal fade" id="pdfModal" tabindex="-1" aria-labelledby="pdfModalLabel" aria-hidden="true">
+  <div class="modal-dialog pdfmodaldialog">
+    <div class="modal-content modal-content__pdf">
+      <div class="modal-header">
+        <h5 class="modal-title" id="pdfModalLabel">Invoice</h5>
+        <button type="button" class="btn-close" onclick="pdfModelHide('#pdfModal')" data-bs-dismiss="modal"
+          aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="pdfModalBody">
+      </div>
+      <div class="modal-footer" id="pdfmodalfooter">
+        <button type="button" class="btn btn-secondary" onclick="pdfModelHide('#pdfModal')"
+          data-bs-dismiss="modal">Close</button>
+        <button type="button" id="confirmPdfDownload" class="btn btn-danger">Generate PDF</button>
+      </div>
+    </div>
+  </div>
+</div>

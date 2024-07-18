@@ -1,0 +1,64 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product</title>
+  <link rel="stylesheet" href="src/css/form.css">
+  <link rel="stylesheet" href="src/css/manageCustomers/customerForm.css" />
+  <style>
+  </style>
+</head>
+
+<body class="body">
+  <div class="row form-popup" id="myForm">
+    <div class="col-md-12 " data-bs-spy="scroll" style="width: 498px;">
+      <form id="productForm" name="productForm">
+        <div class="container">
+          <h1>Product Details</h1>
+          <h3 onclick="closeForm()" id="closeCustomerForm" class="text-danger">X</h3>
+          <fieldset>
+            <div class="form-floating mb-3 customerform__errordiv">
+              <input name="productname" type="text" class="form-control customerInput" id="floatingInput"
+                placeholder="name@example.com">
+              <label for="floatingInput">Product Name </label>
+            </div>
+
+            <div class="form-floating mb-3 customerform__errordiv">
+              <input name="skuid" type="text" class="form-control customerInput" id="floatingInput"
+                placeholder="name@example.com">
+              <label for="floatingInput">SKU id</label>
+            </div>
+
+            <div class="form-floating customerform__errordiv">
+              <select name="category" id="category" class="form-select" aria-label="Floating label select example">
+              </select>
+
+            </div>
+
+            <div class="form-floating mb-3 customerform__errordiv">
+              <input name="cost" type="number" class="form-control customerInput" id="cost"
+                placeholder="name@example.com">
+              <label for="cost">Price</label>
+            </div>
+
+
+
+            <div class="form-floating mb-3 customerform__errordiv">
+              <input name="description" type="text" class="form-control customerInput" id="floatingInput"
+                placeholder="name@example.com">
+              <label for="floatingInput">Description</label>
+            </div>
+
+          </fieldset>
+          <div id="error"></div>
+          <button type="button" id="submitBtn" class="btn btn-outline-primary" onclick="submitbtn()">Submit</button>
+          <button type="reset" class="btn btn-outline-danger">Reset</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+
+</html>

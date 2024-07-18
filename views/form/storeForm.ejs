@@ -1,0 +1,53 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Store</title>
+<link rel="stylesheet" href="src/css/form.css">
+
+<body class="body">
+  <div class="row form-popup" id="myForm">
+    <div class="col-md-12 " data-bs-spy="scroll">
+      <form method="post" id="storeForm" name="storeForm">
+        <h6 onclick="closeForm()" class="text-danger"
+          style="margin-left: 390px; margin-top: 5px; cursor: pointer; font-size: 25px;">
+          X</h6>
+        <div class="container">
+          <h1>Storage Details</h1>
+          <fieldset>
+            <div class="form-floating mb-3">
+              <input name="storageName" type="text" class="form-control" id="floatingInput"
+                placeholder="name@example.com" required>
+              <label for="floatingInput">Place Name</label>
+            </div>
+            <div class="form-floating">
+              <select class="form-select" name="storeType">
+                <option value="16" id="Warehouses">Warehouses</option>
+                <option value="17" id="Stores">Stores</option>
+                <option value="18" id="Distribution Centers">Distribution Centers</option>
+              </select>
+            </div>
+
+            <div class="form-floating customerform__errordiv">
+              <select name="state" class="form-select" id="stateSelectCombo" aria-label="Floating label select example"
+                onchange="getCity(this)" required>
+              </select>
+            </div>
+
+            <div class="form-floating customerform__errordiv">
+              <select name="city" class="form-select" id="citySelectCombo" aria-label="Floating label select example">
+              </select>
+            </div>
+          </fieldset>
+        </div>
+      </form>
+      <div class="d-flex" style="background: #f4f7f8; border-radius: 6px;">
+        <button class="btn btn-outline-primary " id="insertButton" onclick="submitStoreDetails()">Submit</button>
+        <button class="btn btn-outline-primary " id="updateButton" onclick="updateStoreDetails(this)">Edit</button>
+        <button type="reset" class="btn btn-outline-danger ms-2">Reset</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+
+</html>

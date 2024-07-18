@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile View</title>
+  <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+  <script src="/js/bootstrap.js"></script>
+  <link rel="stylesheet" href="src/css/allpage.css" />
+  <link rel="stylesheet" href="src/css/profile/profileStyle.css" />
+</head>
+
+<body>
+  <%- include("../components/navigation", {data})%>
+    <div class="container div-second">
+      <div class="main-container">
+        <div class="profile-details">
+          <form class="g-3 edit-profile-form" method="post" enctype="multipart/form-data" id="form"
+            action="/profileEdit" onsubmit="return submitbtn();">
+            <div class="container edit-img-container">
+              <div class="img-container">
+                <img src="<%= data?.dp ? `/uploads/${data.dp}` : '/icons/profile.png'%>" alt="img" width="40"
+                  height="40" class="rounded-circle" id="profileImage" />
+              </div>
+              <div class="edit-link">
+                <input name="newImage" type="file" class="form-control" id="choose-file"
+                  accept="image/png, image/jpg, image/jpeg" style="width: 250px;" oninput="loadPreview(event)">
+              </div>
+            </div>
+            <br>
+            <div>
+              <label class="form-label">First Name</label>
+              <input name="firstname" type="text" class="form-control" value="<%= profileDetails[0][0].firstname%>">
+            </div>
+            <br>
+            <div>
+              <label class="form-label">Last Name</label>
+              <input name="lastname" type="text" class="form-control" value="<%= profileDetails[0][0].lastname%>">
+            </div>
+            <br>
+            <div class="col-12">
+              <label class="form-label">Date of Birth</label>
+              <input name="dob" type="date" class="form-control" max="<%= new Date().toISOString().split('T')[0]%>"
+                value="<%= new Date(profileDetails[0][0].dob)
+                  .toLocaleDateString()
+                  .split('/')
+                  .reverse().map(o => o < 10 ? String(o).padStart(2, '0') : o)
+                  .join('-')%>">
+            </div>
+            <br>
+            <div class="col-12">
+              <label class="form-label">Email</label>
+              <% if(profileDetails[0][0].role==4) { %>
+                <input name="email" type="text" class="form-control" value="<%= profileDetails[0][0].email%>">
+                <% } else{ %>
+                  <input name="email" type="text" class="form-control" value="<%= profileDetails[0][0].email%>"
+                    disabled>
+                  <% } %>
+            </div>
+            <div class="edit-btn-container">
+              <button type="submit" id="submitBtn" class="edit-profile-btn">Save</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="js/commonFunction/commonFunction.js"></script>
+    <script src="js/profile/profile.js"></script>
+
+</body>
+
+</html>

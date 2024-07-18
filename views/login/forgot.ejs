@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/src/css/login/style.css">
+  <link rel="stylesheet" href="/src/css/login/forgotStyle.css">
+  <link rel="stylesheet" href="/sweetalert2/sweetalert2.min.css">
+  <script src="/sweetalert2/sweetalert2.min.js"></script>
+</head>
+
+<body>
+  <div class="main" style="display: flex; width: 635px;">
+    <form method="post" id="form">
+      <h1>Inventory Management</h1>
+      <h2>Create Password</h2>
+      <%if(locals.error_expire){%>
+        <div class="main_err" id="error_expire" style="color: red;">
+          <%=error_expire%>
+        </div>
+        <%}%>
+          <label for="new_pass">New Password</label>
+          <input type="text" name="new_pass" class="new_pass" id="new_pass" style="width: 76%;" required>
+          <span id="text" style="color: red;"></span>
+          <label for="confirm_pass">Confirm Password</label>
+          <div class="eye2">
+            <input type="password" name="confirm_pass" class="confirm_pass" id="confirm_pass" style="width: 76%;" required>
+            <div class="eyes">
+              <img id="eye_slash" class="eye1" src="/icons/hide(1).png" alt="">
+              <img src="/icons/view.png" style="display: none;" class="eye1" id="eye" alt="">
+            </div>
+          </div>
+          <div class="main_err" id="error_forgot" style="color: red;">
+
+          </div>
+
+          <button type="button" class="submit" style="width: 76%;" onclick="submitbtn()">Generate</button>
+        </form>
+        <div class="">
+          <img src="/icons/create.gif" alt="" style="width:250px;
+          margin-top: 150px;">
+        </div>
+  </div>
+  <script src="/js/login/forgotValidation.js"></script>
+  <script src="/js/login/forgot.js"></script>
+  <script src="/js/commonFunction/commonFunction.js"></script>
+</body>
+
+</html>

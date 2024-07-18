@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#myForm {
+  display: none;
+  position: absolute;
+  top: 0%;
+  left: 30%;
+  z-index: 1;
+}
+
+#closeCustomerForm {
+  cursor: pointer;
+  text-align: right;
+  width: 100px;
+  position: absolute;
+  top: 5%;
+  right: 5%;
+}
+
+.manageCustomerFieldset {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 20px;
+}

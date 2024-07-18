@@ -1,0 +1,170 @@
+:root {
+  --managecustomersection: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+#myForm {
+  display: none;
+  position: absolute;
+  top: 0%;
+  left: 30%;
+  z-index: 1;
+}
+
+#closeCustomerForm {
+  cursor: pointer;
+  color: red;
+}
+.managecustomer-section {
+  max-width: 1300px;
+  min-height: 850px;
+  background-color: var(--managecustomersection);
+}
+
+.managecustomer-container {
+  max-width: 1300px;
+  padding: 20px;
+  margin: 0 auto;
+  /* overflow-x: auto; */
+}
+
+.managecustomerTitle {
+  padding: 20px 0;
+  font-size: 30px;
+  font-weight: 400;
+  width: 400px;
+}
+
+.managecustomer-container__button {
+  display: flex;
+  gap: 20px;
+}
+
+.addnewcustomerbutton,
+.customerfilterbutton,
+#fileUploadButton {
+  padding: 10px;
+  background-color: #002f4b;
+  color: white;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+#customerStatus {
+  width: 200px;
+  position: absolute;
+  right: 0;
+  z-index: 4;
+  cursor: pointer;
+}
+
+/* Style for the table */
+
+#customerTableDiv {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.managecustomer__table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Style for table header */
+.managecustomer__table th {
+  background-color: #002f4b;
+  color: white;
+  font-weight: bold;
+  padding: 12px;
+  text-align: left;
+  border-bottom: 2px solid #ddd;
+}
+
+/* Style for table rows */
+.managecustomer__table tr {
+  border-bottom: 1px solid #ddd;
+}
+
+/* Alternate row color */
+.managecustomer__table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Hover effect for rows */
+.managecustomer__table tr:hover {
+  background-color: #e5ebf4;
+}
+
+.managecustomer__actionbutton {
+  cursor: pointer;
+  padding: 5px;
+}
+
+.managecustomer__table {
+  width: auto;
+  max-width: 100%;
+  /* Ensures table doesn't overflow container */
+  border-collapse: collapse;
+  border-spacing: 0;
+  white-space: nowrap;
+  /* Prevents text wrapping */
+}
+
+.managecustomer__table th,
+.managecustomer__table td {
+  padding: 10px;
+  text-align: left;
+}
+
+/* Style for the action column */
+.managecustomer__actioncolumn {
+  width: 100px;
+}
+
+/* paggination */
+.pagginationcontainer {
+  right: 0;
+}
+
+/* fileupload */
+.importDataDiv {
+  display: flex;
+  gap: 20px;
+  position: relative;
+}
+#customerFileUploadForm {
+  display: none;
+  margin: 0;
+  width: 254px;
+  position: absolute;
+  top: 80%;
+}
+
+.fileUploadDiv {
+  display: none;
+}
+
+#customersFile {
+  padding: 10px;
+}
+
+.importDataButton,
+#fileUploadButton {
+  padding: 10px;
+  background-color: #002f4b;
+  color: white;
+  cursor: pointer;
+  border-radius: 10px;
+  text-align: center;
+  width: 150px;
+}

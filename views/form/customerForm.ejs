@@ -1,0 +1,81 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer</title>
+  <link rel="stylesheet" href="src/css/form.css">
+  <link rel="stylesheet" href="src/css/manageCustomers/customerForm.css" />
+
+</head>
+
+<body class="body">
+  <div class="row form-popup" id="myForm">
+    <div class="col-md-12 " data-bs-spy="scroll">
+      <form id="customerForm" name="customerForm">
+        <div class="container">
+          <h1>Customer Details</h1>
+          <p onclick="closeForm()" id="closeCustomerForm" class="text-danger" style="font-size: 30px;left: 371px;
+          top: 10px;">X</p>
+          <fieldset class="manageCustomerFieldset">
+
+            <div class="form-floating mb-3 customerform__errordiv">
+              <input name="firstname" type="text" class="form-control customerInput" id="floatingInput"
+                placeholder="name@example.com">
+              <label for="floatingInput">First Name </label>
+            </div>
+
+            <div class="form-floating mb-3 customerform__errordiv">
+              <input name="lastname" type="text" class="form-control customerInput" id="floatingInput"
+                placeholder="name@example.com">
+              <label for="floatingInput">Last Name </label>
+            </div>
+
+            <div class="form-floating mb-3 customerform__errordiv">
+              <input name="email" type="text" class="form-control customerInput" id="floatingInput"
+                placeholder="name@example.com">
+              <label for="floatingInput">Email address</label>
+            </div>
+
+            <div class="form-floating mb-3 customerform__errordiv">
+              <input name="phonenumber" type="text" class="form-control customerInput" id="floatingInput"
+                placeholder="name@example.com">
+              <label for="floatingInput">Phone Number </label>
+            </div>
+
+            <div class="form-floating customerform__errordiv">
+              <textarea name="address" class="form-control customerInput" placeholder="Leave a comment here"
+                id="floatingTextarea"></textarea>
+              <label for="floatingTextarea">Address</label>
+            </div>
+
+            <div class="form-floating mb-3 customerform__errordiv">
+              <input name="zipcode" type="text" class="form-control customerInput" id="floatingInput"
+                placeholder="name@example.com">
+              <label for="floatingInput">Zipcode </label>
+            </div>
+
+
+            <div class="form-floating customerform__errordiv">
+              <select name="state" class="form-select" id="stateSelectCombo" aria-label="Floating label select example"
+                onchange="getCity(this)">
+
+              </select>
+            </div>
+
+            <div class="form-floating customerform__errordiv">
+              <select name="city" class="form-select" id="citySelectCombo" aria-label="Floating label select example">
+              </select>
+            </div>
+
+          </fieldset>
+          <p id="submitButton" class="btn btn-outline-primary" onclick="submitCustomerDetails()">Submit</p>
+          <input type="reset" class="btn btn-outline-danger" value="Reset" style="margin-top: -15px;">
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+
+</html>
